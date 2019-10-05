@@ -65,8 +65,10 @@ public class SimpleWaitNotify {
         private List<Account> locks = new ArrayList<>();
 
         public synchronized void apply(Account src, Account tag) {
+            System.out.println(locks.size());
             while (locks.contains(src) || locks.contains(tag)) {
                 try {
+                    //线程执行wait后进入到等待队列，会释放锁
                     this.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
