@@ -54,6 +54,8 @@ public class SimpleWaitNotify {
             //unlock
             Allocator.getInstance().release(this, target);
         }
+
+        //重写hashCode和equals方法
     }
 
     /**
