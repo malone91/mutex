@@ -6,7 +6,6 @@ package com.melo.algo;
 public class LinkedListDemo {
 
     public Node reverse(Node list) {
-        //it is return result
         Node headNode = null;
 
         Node currentNode = list;
@@ -15,16 +14,13 @@ public class LinkedListDemo {
         while (currentNode != null) {
             Node nextNode = currentNode.next;
             if (nextNode == null) {
-                //last node is final first
                 headNode = nextNode;
             }
 
-            //store temp pointer value : address  先把当前节点的地址值存起来,当前的终归会作为下一个节点
-
             currentNode.next = previousNode;
             previousNode = currentNode;
-            currentNode = nextNode;
 
+            currentNode = nextNode;
         }
 
         return headNode;
